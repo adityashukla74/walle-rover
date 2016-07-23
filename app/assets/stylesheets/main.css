@@ -48,7 +48,7 @@
 .logo {
   margin-top: 60px;
   height: 300px;
-  background-image: url(image-path('banner_follow_th.jpg');
+  background-image: url(<%= asset_data_uri 'banner_follow_th.jpg'%>);
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
