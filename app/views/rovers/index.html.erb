@@ -1,0 +1,46 @@
+<!-- Wrapper -->
+          <section id="wrapper">
+              <section id="one" class="wrapper spotlight style1">
+                <div class="inner">
+                  <a href="#" class="image"><%= image_tag 'nasa1.jpg' %></a>
+                  <div class="content">
+                    <h2 class="major">Mars Rover Control Panel</h2>
+                    <p>Explore the unknown with Wall-E and Eve</p>
+                    <a href="#" class="special">Scroll a bit below</a>
+                  </div>
+                </div>
+              </section>
+          </section>
+<!-- Footer -->
+          <section id="footer">
+            <div class="inner">
+                <h2 class="major">Control Panel</h2>
+                Enter the coordinates and the directions for the rover to move.
+                <hr>
+                <%= form_tag("/rovers/move") do %>
+                  <%= field_set_tag do %>
+                      <legend> Plateau's setting </legend>
+                      <p>
+                        <%= label_tag :plateau_limit %>
+                        <%= text_field_tag :plateau_limit, params[:plateau_limit] %> example: 5 5
+                      </p>
+                  <% end %>
+                  <%= field_set_tag do %>
+                    <legend> Rover's Move </legend>
+                    <div id="rover_move">
+                      <div class="rover_input">
+                        <p>
+                          <%= label_tag :current_position %>
+                          <%= text_field_tag :current_position, params[:current_position] %> example: 1 2 N
+                        </p>
+                        <p>
+                          <%= label_tag :move_input %>
+                          <%= text_field_tag :inputs, params[:inputs] %> example: LMLMLMLMM
+                        </p>
+                      </div>
+                    </div>
+                  <% end %>
+                  <%= submit_tag "GO" %>
+                <% end %>
+              <br />
+              <%= render :partial => "result" unless @rover.blank? %>
