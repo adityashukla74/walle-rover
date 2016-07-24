@@ -41,7 +41,7 @@ class RoverMovement
                   "E" => "SL", 
                   "W" => "SR"
                  }
-  def rotate(rover_dir, move_dir)
-    ROTATE_ROVER["#{rover_dir}#{move_dir}"]
+  def rotate(rover_dir, move_direction)
+    ROTATE_ROVER["#{rover_direction}#{move_dir}"]
   end
 end
