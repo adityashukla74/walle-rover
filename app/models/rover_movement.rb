@@ -23,8 +23,6 @@ class RoverMovement
     end
 
     if !plateau.possible_movement?(position_x_new, position_y_new)
-      #Robot cant move outside plateu
-      Rails.logger.info "Robot can't move outside to #{position_x_new}, #{position_y_new}"
       return position_x, position_y
     else
       return position_x_new, position_y_new
