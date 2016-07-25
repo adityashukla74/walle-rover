@@ -17,8 +17,8 @@ class RoverMovement
 
     case direction
       when "N" then position_y_new = position_y + 1
-      when "S" then position_y_new = position_y - 1
       when "E" then position_x_new = position_x + 1
+      when "S" then position_y_new = position_y - 1
       when "W" then position_x_new = position_x - 1
     end
 
